@@ -30,7 +30,7 @@ META.yml
 reaction.xclp
 README
 script/clips-cover.pl
-script/xclips.pl
+script/xclips
 t/anti-vectorize.xclp
 t/goal-match.xclp
 t/pod-coverage.t
@@ -40,3 +40,4 @@ t/vector-eval.xclp
 t/vectorize.xclp
 t/vrg-kb.t
 t/vrg-sugar.xclp
+inc/Module/Install/Scripts.pm

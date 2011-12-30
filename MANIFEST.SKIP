@@ -31,3 +31,5 @@ test-1\.xclp
 test-2\.clp
 test-2\.xclp
 vectorize\.clp
+\.swo$
+\.swp$

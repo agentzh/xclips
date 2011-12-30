@@ -11,3 +11,4 @@ t/vectorize.clp
 pm_to_blib
 blib/
 Makefile
+XClips-*/

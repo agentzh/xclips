@@ -20,6 +20,8 @@ requires        ('IPC::Run3');
 requires        ('GraphViz');
 requires        ('Text::Table');
 
+install_script  ('script/xclips');
+
 use_test_base;
 
 auto_install;

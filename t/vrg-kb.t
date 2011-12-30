@@ -25,8 +25,8 @@ run {
     }
     my $clp_file  = "$tmpdir/$fbase.clp";
     unlink $clp_file if -f $clp_file;
-    run3 [$^X, '-Ilib', 'script/xclips.pl', '-I', 't', '-c', $xclp_file], \undef, undef, undef;
-    is $?, 0, 'xclips.pl terminated successfully';
+    run3 [$^X, '-Ilib', 'script/xclips', '-I', 't', '-c', $xclp_file], \undef, undef, undef;
+    is $?, 0, 'xclips terminated successfully';
     ok -f $clp_file, "$clp_file exists - " . $block->name;
     my $clp_out = read_file($clp_file);
     #$clp_out =~ s/\W//g;
