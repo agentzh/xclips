@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use File::Spec;
 
-our $version = '0.01';
+our $VERSION = '0.01';
 
 use base 'XClips::Compiler::Base';
 
@@ -151,6 +151,14 @@ __END__
 =head1 NAME
 
 XClips::Compiler - XClips expert system development language
+
+=head1 INSTALLATION
+
+    make -f makefile.meta
+    perl Makefile.PL
+    make
+    make test
+    make install
 
 =head1 AUTHOR
 

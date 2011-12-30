@@ -1,6 +1,13 @@
 NAME
     XClips::Compiler - XClips expert system development language
 
+INSTALLATION
+        make -f makefile.meta
+        perl Makefile.PL
+        make
+        make test
+        make install
+
 AUTHOR
     Zhang "agentzh" Yichun (章亦春) <agentzh@gmail.com>
 
