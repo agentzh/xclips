@@ -1,0 +1,13 @@
+*.swp
+*.swo
+*~
+lib/XClips/Compiler/Base.pm
+t/preprocess.clp
+t/test-1.clp
+t/test-1.xclp
+t/test-2.clp
+t/test-2.xclp
+t/vectorize.clp
+pm_to_blib
+blib/
+Makefile

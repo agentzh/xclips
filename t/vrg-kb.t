@@ -108,7 +108,7 @@ __DATA__
 
 ;  syntax sugar definitions for the VRG knowledge base 
 
-; t\preprocess.xclp (line 8)
+; t/preprocess.xclp (line 8)
 (defrule Vectorize::preprocess-8
     (and (plane ?alpha) (and (plane ?beta) (meet ?alpha ?beta ?l)))
     =>
@@ -117,7 +117,7 @@ __DATA__
     (assert (space-relation on ?l ?beta))
 )
 
-; t\preprocess.xclp (line 15)
+; t/preprocess.xclp (line 15)
 (defrule Vectorize::preprocess-15
     (and (line ?l) (and (line ?m) (meet ?l ?m ?)))
     =>
@@ -129,7 +129,7 @@ __DATA__
     (assert (space-relation not_parallel ?l ?m))
 )
 
-; t\preprocess.xclp (line 16)
+; t/preprocess.xclp (line 16)
 (defrule Vectorize::preprocess-16
     (and (line ?l) (and (plane ?alpha) (meet ?l ?alpha ?)))
     =>
@@ -137,7 +137,7 @@ __DATA__
     (assert (space-relation not_on ?l ?alpha))
 )
 
-; t\preprocess.xclp (line 23)
+; t/preprocess.xclp (line 23)
 (defrule Vectorize::preprocess-23
     (and (line ?l) (and (plane ?alpha) (and (line ?m) (project ?l ?alpha ?m))))
     =>
@@ -150,7 +150,7 @@ __DATA__
     (assert (space-relation orthogonal ?theta ?alpha))
 )
 
-; t\preprocess.xclp (line 25)
+; t/preprocess.xclp (line 25)
 (defrule Vectorize::preprocess-25
     (and (plane ?alpha) (and (line ?l) (space-relation ?R ?alpha ?l)))
     =>
