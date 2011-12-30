@@ -117,4 +117,6 @@ sub run_clips {
         $clips->run(sub { print $_[0] if defined $_[0] });
         $clips->eof;
     }
-}    
+}
+
+

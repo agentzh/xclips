@@ -13,6 +13,13 @@ our $Verbose = 0;
 sub new {
     my $class = ref $_[0] ? ref shift : shift;
     my @opts = map { "-l $_" } @_;
+
+    if (!can_run("clips")) {
+        die "The \"clips\" utility not found in your system. ",
+            "please install it first from http://clipsrules.sourceforge.net/ ",
+            "and make it visible in your PATH environment";
+    }
+
     bless {
         plans => [],
         callbacks => [],
@@ -47,8 +54,10 @@ sub eof {
     my $tempfile = mktemp("clips_cache_XXXXXXX");
     my $cmd = "clips $opts > $tempfile";
     #warn "$cmd";
-    open my $out, "| $cmd" or
+
+    open my $out, "|$cmd" or
         die "can't spawn clips: $!";
+
     for my $plan (@plan) {
         #warn "$plan";
         print $out $plan;
@@ -109,4 +118,27 @@ sub AUTOLOAD {
     }
 }
 
+# check if we can run some command
+sub can_run {
+    my ($cmd) = @_;
+
+    #warn "can run: @_\n";
+    my $_cmd = $cmd;
+    return $_cmd if -x $_cmd;
+
+    return undef if $_cmd =~ m{[\\/]};
+
+    # FIXME: this is a hack; MSWin32 is not supported anyway
+    my $path_sep = ':';
+
+    for my $dir ((split /$path_sep/, $ENV{PATH}), '.') {
+        next if $dir eq '';
+        my $abs = File::Spec->catfile($dir, $_[0]);
+        return $abs if -x $abs;
+    }
+
+    return undef;
+}
+
 1;
+
