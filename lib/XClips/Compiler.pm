@@ -154,11 +154,22 @@ XClips::Compiler - XClips expert system development language
 
 =head1 INSTALLATION
 
-    make -f makefile.meta
+=over
+
+=item *
+
+First install CLIPS from L<http://clipsrules.sourceforge.net/> and
+ensure the "clips" utility visible in your PATH invironment.
+
+=item *
+
+    make -f makefile.meta # if you're building from the git repository
     perl Makefile.PL
     make
     make test
     make install
+
+=back
 
 =head1 AUTHOR
 
